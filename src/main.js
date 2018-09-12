@@ -3,4 +3,6 @@ import { render } from 'react-dom'
 
 const app = document.getElementById('app')
 
-render(<h1>React y Webpack ( Cristian Cano )</h1>, app)
+import ComponenteP from './components/Componente'
+
+render(<ComponenteP/>, app)

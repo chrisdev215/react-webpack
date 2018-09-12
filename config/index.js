@@ -16,7 +16,9 @@ module.exports = {
 		notifyOnErrors: true, // Notifica los errores en consola
 		poll: false, //Tiempo de espera al recompilar,
 
-		devtool: 'cheap-module-eval-source-map' // Muestra el codigo transpilado
+		devtool: 'cheap-module-eval-source-map', // Muestra el codigo transpilado
+
+		cssSourceMap: true // Para que busque y compile todos los css
 	},
 
 	build: {

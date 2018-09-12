@@ -15,8 +15,10 @@ module.exports = {
 		publicPath: process.env.NODE_ENV === "produccion"? config.build.assetsPublicPath : config.dev.assetsPublicPath
 	},
 	resolve: {
-		extensions: ['.js'],
-		alias: {}
+		extensions: ['.js', '.css'],
+		alias: {
+			'@': resolve('src')
+		}
 	},
 	module: {
 		rules: [

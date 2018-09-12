@@ -7,7 +7,6 @@ const utils = require('./utils')
 const config = require('../config') // La configuracion de los entornos de desarrollo y produccion
 const baseWebpackConfig = require('./webpack.base.config')
 
-const ExtractTextPlugin = require('extract-text-webpack-plugin') // Extrae el texto de un paquete o varios paquetes en archivos separados
 const CopyWebpackPlugin = require('copy-webpack-plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const FriendlyErrorsPlugin = require('friendly-errors-webpack-plugin')
@@ -18,15 +17,7 @@ const PORT = Number(process.env.PORT)
 
 const devWebpackConfig = merge(baseWebpackConfig, {
 	module: {
-		rules: [
-			{
-				test: /\.css$/,
-				use: ExtractTextPlugin.extract({
-					fallback: "style-loader",
-					use: "css-loader"
-				})
-			}
-		],
+		rules: utils.styleLoaders({ sourceMap: config.dev.cssSourceMap })
 	},
 	devtool: config.dev.devtool,
 
