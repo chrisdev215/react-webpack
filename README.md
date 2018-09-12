@@ -24,4 +24,6 @@
 >* [Node](https://nodejs.org/dist/latest-v8.x/docs/api/)
 >* [Express](http://expressjs.com/en/starter/installing.html)
 >
+##Herramientas
+>React devtools es una extension que permite inspeccionar los componentes de una manera mas practica desde la consola
 >
