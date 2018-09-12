@@ -1,8 +1,8 @@
-import React from 'react';
-import { render } from 'react-dom'
+import React from 'react'
+import { render } from 'react-dom';
 
+import Home from '@/components/Home'
 const app = document.getElementById('app')
+import '@/assets/css/style.css'
 
-import ComponenteP from './components/Componente'
-
-render(<ComponenteP/>, app)
+render(<Home/>, app);
