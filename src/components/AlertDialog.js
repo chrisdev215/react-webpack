@@ -7,25 +7,32 @@ import DialogContentText from '@material-ui/core/DialogContentText';
 import DialogTitle from '@material-ui/core/DialogTitle';
 
 class AlertDialog extends React.Component {
-  state = {
-    open: false,
+
+  constructor(props){
+    super(props);
+    this.state = {
+      open: false
+    }
+    this.handleClickOpen = this.handleClickOpen.bind(this);
+    this.handleClose = this.handleClose.bind(this);
   };
 
-  handleClickOpen = () => {
+  handleClickOpen(){
     this.setState({ open: true });
   };
 
-  handleClose = () => {
+  handleClose(){
     this.setState({ open: false });
   };
 
   render() {
+    console.log('this.state -->', this.state)
+    const {open} = this.props;
+
+    console.log(open)
     return (
-      <div>
-        <Button onClick={this.handleClickOpen}>Open alert dialog</Button>
         <Dialog
           open={this.state.open}
-          onClose={this.handleClose}
           aria-labelledby="alert-dialog-title"
           aria-describedby="alert-dialog-description"
         >
@@ -45,7 +52,6 @@ class AlertDialog extends React.Component {
             </Button>
           </DialogActions>
         </Dialog>
-      </div>
     );
   }
 }
